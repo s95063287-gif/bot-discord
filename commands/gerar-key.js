@@ -50,7 +50,7 @@ module.exports = {
         }
 
         try {
-            await axios.post(`${API_URL}/generate-key`, {
+            await axios.post(`${API_URL}/api/generate-key`, {
                 key,
                 duration
             });
