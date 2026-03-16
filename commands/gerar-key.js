@@ -7,6 +7,7 @@ const generateKey = (duration) => {
     const segment = (len) => Array.from({length: len}, () => chars[Math.floor(Math.random() * chars.length)]).join('');
     
     const prefixes = {
+        '1PENIS':      'KDAY',
         '1day':      'KDAY',
         '1week':     'KWEEK',
         '1month':    'KMONTH',
@@ -37,6 +38,7 @@ module.exports = {
                 .setDescription('Key duration')
                 .setRequired(true)
                 .addChoices(
+                    { name: 'penis', value: '1day' },
                     { name: '1 day', value: '1day' },
                     { name: '1 week', value: '1week' },
                     { name: '1 month', value: '1month' },
