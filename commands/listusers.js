@@ -19,7 +19,7 @@ module.exports = {
             }).join('\n') || 'No users found.';
 
             const embed = new EmbedBuilder()
-                .setTitle(`👥 Registered Users (${data.total})`)
+                .setTitle(`👥 Registered Niggers (${data.total})`)
                 .setColor(0x5865F2)
                 .setDescription(userList)
                 .setTimestamp();
