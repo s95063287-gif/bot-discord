@@ -16,10 +16,17 @@ module.exports = {
         const username = interaction.options.getString('username');
         const password = interaction.options.getString('password') || '';
         const hwid = interaction.user.id;
+        const discordId = interaction.user.id;
 
         try {
-            await axios.post(`${process.env.API_URL}/api/register`, { key, username, password, hwid });
-            await interaction.editReply({ content: `✅ Successfully registered as **${username}**!` });
+            await axios.post(`${process.env.API_URL}/api/register`, { 
+                key, 
+                username, 
+                password, 
+                hwid,
+                discordId
+            });
+            await interaction.editReply({ content: `✅ Successfully registered as **${username}**!\n🎮 Discord: <@${discordId}>` });
         } catch (error) {
             const msg = error.response?.data?.error || error.message;
             await interaction.editReply({ content: `❌ Error: ${msg}` });
